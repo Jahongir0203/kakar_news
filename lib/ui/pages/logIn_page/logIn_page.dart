@@ -5,6 +5,18 @@ class LogInPage extends StatelessWidget {
 static const routeName='/logInPage';
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Container(
+          height: 40,width: 50,
+          child: TextButton(
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/countryPage' );
+            },
+            child: Text("Next"),
+          ),
+        ),
+      ),
+    );
   }
 }

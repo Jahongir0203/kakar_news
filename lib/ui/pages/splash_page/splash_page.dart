@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/blocs/splash_bloc/splash_bloc.dart';
 import '../../../data/utils/app_png.dart';
-// import '../onBoarding_page/onBoarding_page.dart';
+
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
