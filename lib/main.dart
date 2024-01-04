@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kakar_news/data/utils/app_routes.dart';
-import 'package:kakar_news/ui/pages/onBoarding_page/onBoarding_page.dart';
 import 'package:kakar_news/ui/pages/splash_page/splash_page.dart';
 
 void main() {
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: OnBoardingPage.routeName,
+      initialRoute: SplashPage.routeName,
       onGenerateRoute: AppRouteUtils.onGenerateRoute,
     );
   }

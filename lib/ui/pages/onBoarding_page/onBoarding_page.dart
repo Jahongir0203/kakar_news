@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kakar_news/data/utils/app_colors.dart';
 import 'package:kakar_news/data/utils/app_png.dart';
@@ -7,7 +6,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingPage extends StatelessWidget {
   OnBoardingPage({Key? key}) : super(key: key);
-  static const routeName='/onBoardingPage';
+  static const routeName = '/onBoardingPage';
 
   PageController pageController = PageController();
 
@@ -18,20 +17,30 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           PageView(
             controller: pageController,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(AppPng.onBoarding1),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24,top: 24,right: 24),
-                    child: Text('Lorem Ipsum is simply\ndummy',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 24, top: 24, right: 24),
+                    child: Text(
+                      'Lorem Ipsum is simply\ndummy',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24,right: 24),
-                    child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,color: AppColors.OnText,),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 24, right: 24),
+                    child: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.OnText,
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Row(
@@ -40,19 +49,24 @@ class OnBoardingPage extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.bottomRight,
                             child: Padding(
-                              padding: const EdgeInsets.only(bottom: 40,right: 24),
+                              padding:
+                                  const EdgeInsets.only(bottom: 40, right: 24),
                               child: Container(
                                 height: 50,
                                 width: 85,
                                 decoration: ShapeDecoration(
                                   color: AppColors.Onblue,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6)),
                                 ),
                                 child: MaterialButton(
-                                  onPressed: (){
+                                  onPressed: () {
                                     pageController.jumpToPage(1);
-                                    },
-                                  child: Text('Next',style: TextStyle(color: AppColors.white),),
+                                  },
+                                  child: const Text(
+                                    'Next',
+                                    style: TextStyle(color: AppColors.white),
+                                  ),
                                 ),
                               ),
                             ),
@@ -67,14 +81,24 @@ class OnBoardingPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(AppPng.onBoarding2),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24,top: 24,right: 24),
-                    child: Text('Lorem Ipsum is simply\ndummy',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 24, top: 24, right: 24),
+                    child: Text(
+                      'Lorem Ipsum is simply\ndummy',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24,right: 24),
-                    child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,color: AppColors.OnText,),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 24, right: 24),
+                    child: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.OnText,
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Row(
@@ -92,69 +116,14 @@ class OnBoardingPage extends StatelessWidget {
                                     onPressed: () {
                                       pageController.jumpToPage(0);
                                     },
-                                    child: Center(child: Text('Black',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: AppColors.OnText),)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                         Align(
-                            alignment: Alignment.bottomRight,
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 40,right: 24),
-                              child: Container(
-                                height: 50,
-                                width: 85,
-                                decoration: ShapeDecoration(
-                                  color: AppColors.Onblue,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                                ),
-                                child: MaterialButton(
-                                  onPressed: (){
-                                    pageController.jumpToPage(2);
-                                  },
-                                  child: Text('Next',style: TextStyle(color: AppColors.white),),
-                                ),
-                              ),
-                            ),
-                          ),
-
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(AppPng.onBoarding3),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24,top: 24,right: 24),
-                    child: Text('Lorem Ipsum is simply\ndummy',style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 24,right: 24),
-                    child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,color: AppColors.OnText,),),
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.bottomRight,
-                            child: Container(
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 40),
-                                child: Container(
-                                  height: 50,
-                                  width: 85,
-                                  child: MaterialButton(
-                                    onPressed: () {
-                                      pageController.jumpToPage(1);
-                                    },
-                                    child: Center(child: Text('Black',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: AppColors.OnText),)),
+                                    child: Center(
+                                        child: Text(
+                                      'Black',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.OnText),
+                                    )),
                                   ),
                                 ),
                               ),
@@ -164,28 +133,110 @@ class OnBoardingPage extends StatelessWidget {
                         Align(
                           alignment: Alignment.bottomRight,
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 40,right: 24),
+                            padding:
+                                const EdgeInsets.only(bottom: 40, right: 24),
+                            child: Container(
+                              height: 50,
+                              width: 85,
+                              decoration: ShapeDecoration(
+                                color: AppColors.Onblue,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6)),
+                              ),
+                              child: MaterialButton(
+                                onPressed: () {
+                                  pageController.jumpToPage(2);
+                                },
+                                child: Text(
+                                  'Next',
+                                  style: TextStyle(color: AppColors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(AppPng.onBoarding3),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 24, top: 24, right: 24),
+                    child: Text(
+                      'Lorem Ipsum is simply\ndummy',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 24, right: 24),
+                    child: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.OnText,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 40),
+                              child: SizedBox(
+                                height: 50,
+                                width: 85,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    pageController.jumpToPage(1);
+                                  },
+                                  child: const Center(
+                                      child: Text(
+                                    'Black',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.OnText),
+                                  )),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(bottom: 40, right: 24),
                             child: Container(
                               height: 50,
                               width: 142,
                               decoration: ShapeDecoration(
                                 color: AppColors.Onblue,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6)),
                               ),
                               child: MaterialButton(
-                                onPressed: (){
-                                  Navigator.pushReplacement(
-                                      context,
-                                      CupertinoPageRoute(
-                                        builder: (context) => const LogInPage(),
-                                      ));
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(
+                                      context, LogInPage.routeName);
                                 },
-                                child: Text('Get Started',style: TextStyle(color: AppColors.white),),
+                                child: Text(
+                                  'Get Started',
+                                  style: TextStyle(color: AppColors.white),
+                                ),
                               ),
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -196,14 +247,15 @@ class OnBoardingPage extends StatelessWidget {
           Align(
               alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 55,left: 24),
-                child: SmoothPageIndicator(controller: pageController, count: 3,
-                  effect: JumpingDotEffect(
-                    activeDotColor:AppColors.Onblue ,
+                padding: const EdgeInsets.only(bottom: 55, left: 24),
+                child: SmoothPageIndicator(
+                  controller: pageController,
+                  count: 3,
+                  effect: const JumpingDotEffect(
+                    activeDotColor: AppColors.Onblue,
                   ),
                 ),
-              )
-          ),
+              )),
         ],
       ),
     );
