@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kakar_news/data/utils/app_colors.dart';
 import 'package:kakar_news/data/utils/app_png.dart';
 import 'package:kakar_news/ui/pages/logIn_page/logIn_page.dart';
+import 'package:kakar_news/ui/pages/signUp_page/signUp_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -227,7 +228,7 @@ class OnBoardingPage extends StatelessWidget {
                               child: MaterialButton(
                                 onPressed: () {
                                   Navigator.pushReplacementNamed(
-                                      context, LogInPage.routeName);
+                                      context, SignUpPage.routeName);
                                 },
                                 child: Text(
                                   'Get Started',
