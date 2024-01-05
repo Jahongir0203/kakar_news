@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakar_news/data/cubits/logIn_cubit/log_in_cubit.dart';
 import 'package:kakar_news/data/utils/app_colors.dart';
 import 'package:kakar_news/data/utils/app_svg.dart';
+import 'package:kakar_news/ui/pages/country_page/country_page.dart';
 import 'package:kakar_news/ui/pages/forgotPassword_page/forgotPassword_page.dart';
 import 'package:kakar_news/ui/pages/signUp_page/signUp_page.dart';
 
@@ -206,7 +207,9 @@ class LogInPage extends StatelessWidget {
                               ),
                               Expanded(
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, ForgotPasswordPage.routeName);
+                                  },
                                   child: Text(
                                     'Forgot the password ?',
                                     style: buildTextStyle(
@@ -236,7 +239,7 @@ class LogInPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               onPressed: (){
-                                Navigator.pushReplacementNamed(context,ForgotPasswordPage.routeName);
+                                Navigator.pushNamed(context,CountryPage.routeName);
 
                               },
                               child: Center(

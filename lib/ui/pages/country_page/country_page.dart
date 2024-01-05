@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kakar_news/ui/pages/topics_page/topics_page.dart';
 
 import '../../../data/utils/app_png.dart';
 
@@ -50,12 +51,6 @@ class _CountryPageState extends State<CountryPage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(Icons.arrow_back),
-            ),
             Padding(
               padding: const EdgeInsets.only(right: 58.0),
               child: Text(
@@ -115,9 +110,9 @@ class _CountryPageState extends State<CountryPage> {
             ),
             child: TextButton(
               onPressed: (){
-                Navigator.pushReplacementNamed(context, '/topicsPage');
+                Navigator.pushNamed(context, TopicsPage.routeName);
               }
-              ,child: Text("Next",style: TextStyle(fontSize: 20,color: Colors.white),),
+              ,child: const Text("Next",style: TextStyle(fontSize: 20,color: Colors.white),),
             ),
           )
 
