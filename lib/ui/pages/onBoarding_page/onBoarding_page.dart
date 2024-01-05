@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kakar_news/data/utils/app_colors.dart';
 import 'package:kakar_news/data/utils/app_png.dart';
-import 'package:kakar_news/ui/pages/logIn_page/logIn_page.dart';
 import 'package:kakar_news/ui/pages/signUp_page/signUp_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -107,25 +106,23 @@ class OnBoardingPage extends StatelessWidget {
                         Expanded(
                           child: Align(
                             alignment: Alignment.bottomRight,
-                            child: Container(
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 40),
-                                child: Container(
-                                  height: 50,
-                                  width: 85,
-                                  child: MaterialButton(
-                                    onPressed: () {
-                                      pageController.jumpToPage(0);
-                                    },
-                                    child: Center(
-                                        child: Text(
-                                      'Black',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.OnText),
-                                    )),
-                                  ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 40),
+                              child: SizedBox(
+                                height: 50,
+                                width: 85,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    pageController.jumpToPage(0);
+                                  },
+                                  child: const Center(
+                                      child: Text(
+                                    'Black',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.OnText),
+                                  )),
                                 ),
                               ),
                             ),
@@ -148,7 +145,7 @@ class OnBoardingPage extends StatelessWidget {
                                 onPressed: () {
                                   pageController.jumpToPage(2);
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Next',
                                   style: TextStyle(color: AppColors.white),
                                 ),
@@ -230,7 +227,7 @@ class OnBoardingPage extends StatelessWidget {
                                   Navigator.pushReplacementNamed(
                                       context, SignUpPage.routeName);
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Get Started',
                                   style: TextStyle(color: AppColors.white),
                                 ),
