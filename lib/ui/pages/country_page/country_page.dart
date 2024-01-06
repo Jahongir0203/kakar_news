@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kakar_news/ui/pages/topics_page/topics_page.dart';
+import 'package:kakar_news/ui/widgets/next_button.dart';
 
 import '../../../data/utils/app_png.dart';
 
@@ -14,30 +15,74 @@ class CountryPage extends StatefulWidget {
 class _CountryPageState extends State<CountryPage> {
   TextEditingController textEditingController = TextEditingController();
   List<String> countries = [
-    "Birlashgan Arab Amirligi", "Argentina", "Avstriya", "Avstraliya", "Bangladesh", "Braziliya",
-    "Kaliforniya", "Shveysariya", "Xitoy", "Kuba", "Chexiya", "Germaniya",
-    "Misr", "Birlashgan Qirollik", "Gretsiya", "Vengriya","Indoneziya", "Irlandiya", "Italiya",
-    "Yaponiya","Koreya", "Litva", "Latviya","Meksika","Malayziya", "Niderlandiya", "Norvegiya","Zelandiya",
-    "Filippin", "Polsha", "Rossiya", "Amerika Qoʻshma Shtatlari",
+    "Birlashgan Arab Amirligi",
+    "Argentina",
+    "Avstriya",
+    "Avstraliya",
+    "Bangladesh",
+    "Braziliya",
+    "Kaliforniya",
+    "Shveysariya",
+    "Xitoy",
+    "Kuba",
+    "Chexiya",
+    "Germaniya",
+    "Misr",
+    "Birlashgan Qirollik",
+    "Gretsiya",
+    "Vengriya",
+    "Indoneziya",
+    "Irlandiya",
+    "Italiya",
+    "Yaponiya",
+    "Koreya",
+    "Litva",
+    "Latviya",
+    "Meksika",
+    "Malayziya",
+    "Niderlandiya",
+    "Norvegiya",
+    "Zelandiya",
+    "Filippin",
+    "Polsha",
+    "Rossiya",
+    "Amerika Qoʻshma Shtatlari",
   ];
 
   List<String> flags = [
     AppPng.KBirlashganArabAmirligi,
-    AppPng.kArgentina, AppPng.kAvstriya,
-    AppPng.kAvstraliya, AppPng.kBangladesh, AppPng.kBraziliya, AppPng.kKaliforniya,
-    AppPng.kShveysariya, AppPng.kXitoy, AppPng.kKuba,
-    AppPng.kChexiya, AppPng.kGermaniya, AppPng.kMisr, AppPng.kBirlashganQirollik,
-    AppPng.kGretsiya, AppPng.kVengriya,
-    AppPng.kIndoneziya, AppPng.kIrlandiya,
-    AppPng.kItaliya, AppPng.kYaponiya,
-    AppPng.kKoreya, AppPng.kLitva,
-    AppPng.kLatviya, AppPng.kMeksika,
-    AppPng.kMalayziya, AppPng.kNiderlandiya,
-    AppPng.kNorvegiya, AppPng.kZelandiya,
-    AppPng.kFilippin, AppPng.kPolsha,
-    AppPng.kRossiya, AppPng.kAmerikaQoshmaShtatlari,
+    AppPng.kArgentina,
+    AppPng.kAvstriya,
+    AppPng.kAvstraliya,
+    AppPng.kBangladesh,
+    AppPng.kBraziliya,
+    AppPng.kKaliforniya,
+    AppPng.kShveysariya,
+    AppPng.kXitoy,
+    AppPng.kKuba,
+    AppPng.kChexiya,
+    AppPng.kGermaniya,
+    AppPng.kMisr,
+    AppPng.kBirlashganQirollik,
+    AppPng.kGretsiya,
+    AppPng.kVengriya,
+    AppPng.kIndoneziya,
+    AppPng.kIrlandiya,
+    AppPng.kItaliya,
+    AppPng.kYaponiya,
+    AppPng.kKoreya,
+    AppPng.kLitva,
+    AppPng.kLatviya,
+    AppPng.kMeksika,
+    AppPng.kMalayziya,
+    AppPng.kNiderlandiya,
+    AppPng.kNorvegiya,
+    AppPng.kZelandiya,
+    AppPng.kFilippin,
+    AppPng.kPolsha,
+    AppPng.kRossiya,
+    AppPng.kAmerikaQoshmaShtatlari,
   ];
-
 
   List<String> filteredCountries = [];
 
@@ -50,7 +95,8 @@ class _CountryPageState extends State<CountryPage> {
   void filterCountries(String query) {
     setState(() {
       filteredCountries = countries
-          .where((country) => country.toLowerCase().contains(query.toLowerCase()))
+          .where(
+              (country) => country.toLowerCase().contains(query.toLowerCase()))
           .toList();
     });
   }
@@ -72,7 +118,6 @@ class _CountryPageState extends State<CountryPage> {
           ],
         ),
       ),
-
       body: Column(
         children: [
           Padding(
@@ -113,7 +158,8 @@ class _CountryPageState extends State<CountryPage> {
                   child: ListTile(
                     title: Text(
                       filteredCountries[index],
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                     ),
                     leading: Image.asset(
                       flags[countries.indexOf(filteredCountries[index])],
@@ -122,25 +168,14 @@ class _CountryPageState extends State<CountryPage> {
                     ),
                   ),
                 );
-
               },
             ),
           ),
-          Container(
-            height: 40,width: 330,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),color: Colors.blue
-            ),
-            child: TextButton(
-              onPressed: (){
-                Navigator.pushNamed(context, TopicsPage.routeName);
-              }
-              ,child: const Text("Next",style: TextStyle(fontSize: 20,color: Colors.white),),
-            ),
-          )
-
         ],
       ),
+      bottomNavigationBar: nextButton(context, () {
+        Navigator.pushNamed(context, TopicsPage.routeName);
+      }, 32),
     );
   }
 }

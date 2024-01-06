@@ -6,6 +6,7 @@ import 'package:kakar_news/ui/pages/fillProfile_page/fillProfile_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
 import '../../../data/utils/app_colors.dart';
+import '../../widgets/next_button.dart';
 
 class NewsSourcePage extends StatelessWidget {
   NewsSourcePage({Key? key}) : super(key: key);
@@ -172,33 +173,12 @@ class NewsSourcePage extends StatelessWidget {
                 ),
               ),
             ),
-            bottomNavigationBar: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 40,
-              ),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, FillProfilePage.routeName);
-                },
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: AppColors.kPrimaryBlue,
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Next',
-                      style: buildTextStyle(
-                        color: AppColors.kWhite,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            bottomNavigationBar: nextButton(
+              context,
+              () {
+                Navigator.pushNamed(context, FillProfilePage.routeName);
+              },
+              40,
             ),
           );
         },
@@ -208,7 +188,7 @@ class NewsSourcePage extends StatelessWidget {
           }
 
           if (state is NewsSourcesChangeState) {
-            list.removeWhere((element) => element==state.index);
+            list.removeWhere((element) => element == state.index);
           }
         },
       ),
