@@ -14,17 +14,28 @@ class CountryPage extends StatefulWidget {
 class _CountryPageState extends State<CountryPage> {
   TextEditingController textEditingController = TextEditingController();
   List<String> countries = [
-    "Afganistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina",
-    "Armenia", "Australia", "Austria", "Azerbaijan", "Iceland", "India",
-    "Indonesia", "Iran", "Iraq", "Ireland",
+    "Birlashgan Arab Amirligi", "Argentina", "Avstriya", "Avstraliya", "Bangladesh", "Braziliya",
+    "Kaliforniya", "Shveysariya", "Xitoy", "Kuba", "Chexiya", "Germaniya",
+    "Misr", "Birlashgan Qirollik", "Gretsiya", "Vengriya","Indoneziya", "Irlandiya", "Italiya",
+    "Yaponiya","Koreya", "Litva", "Latviya","Meksika","Malayziya", "Niderlandiya", "Norvegiya","Zelandiya",
+    "Filippin", "Polsha", "Rossiya", "Amerika Qoʻshma Shtatlari",
   ];
 
   List<String> flags = [
-    AppPng.afganistan, AppPng.albania, AppPng.algeria,
-    AppPng.andorra, AppPng.angola, AppPng.argentina, AppPng.armaniya,
-    AppPng.australia, AppPng.austria, AppPng.azerbaijon,
-    AppPng.iceland, AppPng.india, AppPng.indonesia, AppPng.iran,
-    AppPng.iroq, AppPng.ireland,
+    AppPng.KBirlashganArabAmirligi,
+    AppPng.kArgentina, AppPng.kAvstriya,
+    AppPng.kAvstraliya, AppPng.kBangladesh, AppPng.kBraziliya, AppPng.kKaliforniya,
+    AppPng.kShveysariya, AppPng.kXitoy, AppPng.kKuba,
+    AppPng.kChexiya, AppPng.kGermaniya, AppPng.kMisr, AppPng.kBirlashganQirollik,
+    AppPng.kGretsiya, AppPng.kVengriya,
+    AppPng.kIndoneziya, AppPng.kIrlandiya,
+    AppPng.kItaliya, AppPng.kYaponiya,
+    AppPng.kKoreya, AppPng.kLitva,
+    AppPng.kLatviya, AppPng.kMeksika,
+    AppPng.kMalayziya, AppPng.kNiderlandiya,
+    AppPng.kNorvegiya, AppPng.kZelandiya,
+    AppPng.kFilippin, AppPng.kPolsha,
+    AppPng.kRossiya, AppPng.kAmerikaQoshmaShtatlari,
   ];
 
 
@@ -61,6 +72,7 @@ class _CountryPageState extends State<CountryPage> {
           ],
         ),
       ),
+
       body: Column(
         children: [
           Padding(
@@ -93,13 +105,24 @@ class _CountryPageState extends State<CountryPage> {
             child: ListView.builder(
               itemCount: filteredCountries.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(filteredCountries[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),),
-                  leading: Image.asset(flags[countries.indexOf(filteredCountries[index])], width: 40, height: 40,), // Use the appropriate asset path
+                return InkWell(
                   onTap: () {
                     // Handle country selection
                   },
+                  splashColor: Colors.blue, // Set the splash color
+                  child: ListTile(
+                    title: Text(
+                      filteredCountries[index],
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    ),
+                    leading: Image.asset(
+                      flags[countries.indexOf(filteredCountries[index])],
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
                 );
+
               },
             ),
           ),
