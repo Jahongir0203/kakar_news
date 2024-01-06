@@ -105,13 +105,24 @@ class _CountryPageState extends State<CountryPage> {
             child: ListView.builder(
               itemCount: filteredCountries.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(filteredCountries[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),),
-                  leading: Image.asset(flags[countries.indexOf(filteredCountries[index])], width: 50, height: 50,), // Use the appropriate asset path
+                return InkWell(
                   onTap: () {
                     // Handle country selection
                   },
+                  splashColor: Colors.blue, // Set the splash color
+                  child: ListTile(
+                    title: Text(
+                      filteredCountries[index],
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    ),
+                    leading: Image.asset(
+                      flags[countries.indexOf(filteredCountries[index])],
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
                 );
+
               },
             ),
           ),
