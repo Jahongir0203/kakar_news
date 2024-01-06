@@ -19,4 +19,18 @@ class AppPng {
   static const String iran = 'assets/png/iran.png';
   static const String ireland = 'assets/png/ireland.png';
   static const String iroq= 'assets/png/iroq.png';
+
+///News Sources
+  static const String kCNBC='assets/png/ic_CNBC.png';
+  static const String kVICE='assets/png/ic_Vice.png';
+  static const String kVox='assets/png/ic_Vox.png';
+  static const String kBBC='assets/png/ic_BBC.png';
+  static const String kSCMP='assets/png/ic_SCMP.png';
+  static const String kCNN='assets/png/ic_CNN.png';
+  static const String kMSN='assets/png/ic_MNS.png';
+  static const String kCNET='assets/png/ic_CNET.png';
+  static const String kUSAToday='assets/png/ic_USAToday.png';
+  static const String kTime='assets/png/ic_Time.png';
+  static const String kBuzzFood='assets/png/ic_BuzzFood.png';
+  static const String kDailyMail='assets/png/ic_DailyMail.png';
 }

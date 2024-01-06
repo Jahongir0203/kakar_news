@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakar_news/data/blocs/topics_bloc/topics_bloc.dart';
 import 'package:kakar_news/data/utils/list.dart';
+import 'package:kakar_news/ui/pages/newsSource_page/newsSource_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
 import '../../../data/utils/app_colors.dart';
@@ -138,7 +139,9 @@ class TopicsPage extends StatelessWidget {
                 vertical: 40,
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, NewsSourcePage.routeName);
+                },
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
