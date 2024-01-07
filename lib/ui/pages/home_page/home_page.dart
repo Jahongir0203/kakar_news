@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:kakar_news/ui/pages/notification_page/notification_page.dart';
+import 'package:kakar_news/ui/pages/trending_page/trending_page.dart';
 
 import '../../../data/blocs/news_bloc/news_bloc.dart';
 import '../../../data/network_servis/network_servis.dart';
@@ -46,7 +48,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Image.asset(AppPng.kSplashPng, height: 35, width: 100,),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, NotificationPage.routeName);
+                  },
                   child: Image.asset(
                     AppPng.kRingBall,
                     height: 45,
@@ -119,15 +123,20 @@ class _HomePageState extends State<HomePage> {
 
                       return Column(
                         children: [
-                          Container(
-                            height: 170,
-                            width: 360,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: NetworkImage("${state.data.articles?.last.urlToImage}"),
-                                  fit: BoxFit.fill,
-                                )
+                          InkWell(
+                             onTap:() {
+                               Navigator.pushNamed(context, TrendingPage.routeName);
+                             },
+                            child: Container(
+                              height: 170,
+                              width: 360,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: NetworkImage("${state.data.articles?.last.urlToImage}"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
                             ),
                           ),
 
