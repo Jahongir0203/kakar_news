@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {},
                   child: Image.asset(
-                    AppPng.kRingBoll,
+                    AppPng.kRingBall,
                     height: 45,
                     width: 45,
                   ),
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       suffix: Padding(
                         padding: const EdgeInsets.only(top: 18.0,),
                         child: Image.asset(
-                          AppPng.kiconss,
+                          AppPng.kIconss,
                           height: 30,
                           width: 30,
                         ),
