@@ -5,6 +5,11 @@ class ExplorePage extends StatelessWidget {
  static const routeName='/explorePage';
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Container(
+        height: 80,width: 90,
+        color: Colors.green,
+      ),
+    );
   }
 }
