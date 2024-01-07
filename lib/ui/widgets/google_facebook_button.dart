@@ -34,24 +34,22 @@ class CustomButton extends StatelessWidget {
           onPressed: () {
             onTap();
           },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SvgPicture.asset(
-                  image,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SvgPicture.asset(
+                image,
+              ),
+              const SizedBox(width: 8,),
+              Text(
+                name,
+                style: buildTextStyle(
+                  color: AppColors.kGreyScale,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                 ),
-                Text(
-                  name,
-                  style: buildTextStyle(
-                    color: AppColors.kGreyScale,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),
