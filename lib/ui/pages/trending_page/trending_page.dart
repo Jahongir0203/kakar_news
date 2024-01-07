@@ -39,7 +39,6 @@ class TrendingPage extends StatelessWidget {
               actions: [
                 IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, NotificationPage.routeName);
                     },
                     icon: const Icon(Icons.more_vert)),
               ],

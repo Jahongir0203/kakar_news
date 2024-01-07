@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakar_news/data/blocs/newsSources_bloc/news_sources_bloc.dart';
 import 'package:kakar_news/data/utils/list.dart';
 import 'package:kakar_news/ui/pages/fillProfile_page/fillProfile_page.dart';
+import 'package:kakar_news/ui/pages/home_page/home_page.dart';
 import 'package:kakar_news/ui/pages/trending_page/trending_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
@@ -177,7 +178,7 @@ class NewsSourcePage extends StatelessWidget {
             bottomNavigationBar: nextButton(
               context,
               () {
-                Navigator.pushNamed(context, TrendingPage.routeName);
+                Navigator.pushNamed(context, HomePage.routeName);
                // Navigator.pushNamed(context, FillProfilePage.routeName);
               },
               40,
