@@ -33,6 +33,8 @@ class AppPng {
   static const String kTime='assets/png/ic_Time.png';
   static const String kBuzzFood='assets/png/ic_BuzzFood.png';
   static const String kDailyMail='assets/png/ic_DailyMail.png';
+
+  ///Countries
   static const String KBirlashganArabAmirligi = 'assets/png/BIRLASHGAN.png';
   static const String kArgentina = 'assets/png/ARGINTINA.png';
   static const String kAvstriya = 'assets/png/Avstriya.png';
@@ -65,4 +67,10 @@ class AppPng {
   static const String kPolsha= 'assets/png/Polsha.png';
   static const String kRossiya= 'assets/png/Rossiya.png';
   static const String kAmerikaQoshmaShtatlari= 'assets/png/AmerikaQoʻshmaShtatlari.png';
+  ///Notification page uchun
+static const String kSaris='assets/png/Saris.png';
+  static const String kOmar='assets/png/Omar.png';
+  static const String kBotosh='assets/png/Botosh.png';
+
+
 }

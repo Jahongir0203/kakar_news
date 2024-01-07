@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakar_news/data/blocs/newsSources_bloc/news_sources_bloc.dart';
 import 'package:kakar_news/data/utils/list.dart';
 import 'package:kakar_news/ui/pages/fillProfile_page/fillProfile_page.dart';
+import 'package:kakar_news/ui/pages/trending_page/trending_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
 import '../../../data/utils/app_colors.dart';
@@ -90,7 +91,7 @@ class NewsSourcePage extends StatelessWidget {
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 8,
-                        childAspectRatio: 0.7,
+                        childAspectRatio: 0.65,
                         crossAxisCount: 3,
                       ),
                       itemBuilder: (context, index) {
@@ -176,7 +177,8 @@ class NewsSourcePage extends StatelessWidget {
             bottomNavigationBar: nextButton(
               context,
               () {
-                Navigator.pushNamed(context, FillProfilePage.routeName);
+                Navigator.pushNamed(context, TrendingPage.routeName);
+               // Navigator.pushNamed(context, FillProfilePage.routeName);
               },
               40,
             ),

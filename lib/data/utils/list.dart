@@ -40,3 +40,7 @@ List<String> icNewsSources = [
   AppPng.kBuzzFood,
   AppPng.kDailyMail,
 ];
+
+List notificationsAvatar=[
+
+];

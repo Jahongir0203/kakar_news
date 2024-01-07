@@ -1,8 +1,10 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:kakar_news/data/utils/app_routes.dart';
 import 'package:kakar_news/ui/pages/splash_page/splash_page.dart';
 
 void main() {
+  Faker faker=Faker();
   runApp(const MyApp());
 }
 
