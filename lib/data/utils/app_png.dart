@@ -35,10 +35,25 @@ class AppPng {
   static const String kPolsha= 'assets/png/Polsha.png';
   static const String kRossiya= 'assets/png/Rossiya.png';
   static const String kAmerikaQoshmaShtatlari= 'assets/png/AmerikaQoʻshmaShtatlari.png';
+  static const String kRingBall='assets/png/ring_ball.png';
+  static const String kIconss='assets/png/iconss.png';
   ///Notification page uchun
 static const String kSaris='assets/png/Saris.png';
   static const String kOmar='assets/png/Omar.png';
   static const String kBotosh='assets/png/Botosh.png';
+///Topics Page uchun
+static const String kCNBC='assets/png/ic_CNBC.png';
+  static const String kVICE='assets/png/ic_Vice.png';
+  static const String kVox='assets/png/ic_Vox.png';
+  static const String kBBC='assets/png/ic_BBC.png';
+  static const String kSCMP='assets/png/ic_SCMP.png';
+  static const String kCNN='assets/png/ic_CNN.png';
+  static const String kMSN='assets/png/ic_MNS.png';
+  static const String kCNET='assets/png/ic_CNET.png';
+  static const String kUSAToday='assets/png/ic_USAToday.png';
+  static const String kTime='assets/png/ic_Time.png';
+  static const String kBuzzFood='assets/png/ic_BuzzFood.png';
+  static const String kDailyMail='assets/png/ic_DailyMail.png';
 
 
 }

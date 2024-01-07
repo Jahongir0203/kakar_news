@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:kakar_news/data/models/trending_news_model.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../models/notification_model.dart';
 
 part 'network_service.g.dart';
 
@@ -11,7 +12,12 @@ abstract class NetworkService {
 
   @GET('/top-headlines')
   Future<TrendingNewsModel> getTrendingNews(
-      @Query('country') String country,
-      @Query('apiKey')String apiKey,
-      );
+    @Query('country') String country,
+    @Query('apiKey') String apiKey,
+  );
+
+  @GET('/top-headlines/sources')
+  Future<NotificationModel> getNotifications(
+    @Query('apiKey') String apiKey,
+  );
 }

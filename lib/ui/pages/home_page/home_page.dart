@@ -45,6 +45,14 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(AppPng.kSplashPng, height: 35, width: 100,),
+                InkWell(
+                  onTap: () {},
+                  child: Image.asset(
+                    AppPng.kRingBall,
+                    height: 45,
+                    width: 45,
+                  ),
+                ),
                 // InkWell(
                 //   onTap: () {},
                 //   child: Image.asset(
@@ -78,6 +86,14 @@ class _HomePageState extends State<HomePage> {
                       //     width: 30,
                       //   ),
                       // ),
+                      suffix: Padding(
+                        padding: const EdgeInsets.only(top: 18.0,),
+                        child: Image.asset(
+                          AppPng.kIconss,
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -88,9 +104,9 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Trending", style: TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w600),
+                        fontSize: 18, fontWeight: FontWeight.w500),
                     ),
-                    Text("See all", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                    Text("See all", style: TextStyle(fontSize: 16),),
                   ],
                 ),
               ),
@@ -138,19 +154,15 @@ class _HomePageState extends State<HomePage> {
                           ),
                           SizedBox(height: 10,),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.only(left:12,right: 12),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Latest", style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w600),
-                                ),
-                                Text("See all", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                                Text("Latest",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),),
+                                Text("See all",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
                               ],
                             ),
-                          ),
-
-
+                          )
                         ],
                       );
                     } else if (state is NewsFailureState) {

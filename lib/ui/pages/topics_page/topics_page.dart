@@ -5,6 +5,7 @@ import 'package:kakar_news/data/utils/list.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
 import '../../../data/utils/app_colors.dart';
+import '../../widgets/next_button.dart';
 import '../newsSource_page/newsSource_page.dart';
 
 class TopicsPage extends StatelessWidget {
@@ -133,32 +134,6 @@ class TopicsPage extends StatelessWidget {
                 ],
               ),
             ),
-            bottomNavigationBar: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 40,
-              ),
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: AppColors.kPrimaryBlue,
-                  ),
-                  child: Center(
-                    child: Text(
-
-                     'Next',
-                      style: buildTextStyle(
-                        color: AppColors.kWhite,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
             bottomNavigationBar: nextButton(
               context,
               () {
