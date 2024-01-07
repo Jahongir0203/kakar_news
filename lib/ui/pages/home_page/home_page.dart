@@ -45,14 +45,14 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(AppPng.kSplashPng, height: 35, width: 100,),
-                InkWell(
-                  onTap: () {},
-                  child: Image.asset(
-                    AppPng.kRingBoll,
-                    height: 45,
-                    width: 45,
-                  ),
-                ),
+                // InkWell(
+                //   onTap: () {},
+                //   child: Image.asset(
+                //     AppPng.kRingBoll,
+                //     height: 45,
+                //     width: 45,
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -70,14 +70,14 @@ class _HomePageState extends State<HomePage> {
                       border: OutlineInputBorder(),
                       hintText: "Search",
                       hintStyle: TextStyle(fontSize: 20),
-                      suffix: Padding(
-                        padding: const EdgeInsets.only(top: 18.0,),
-                        child: Image.asset(
-                          AppPng.kiconss,
-                          height: 30,
-                          width: 30,
-                        ),
-                      ),
+                      // suffix: Padding(
+                      //   padding: const EdgeInsets.only(top: 18.0,),
+                      //   child: Image.asset(
+                      //     AppPng.kiconss,
+                      //     height: 30,
+                      //     width: 30,
+                      //   ),
+                      // ),
                     ),
                   ),
                 ),
@@ -88,9 +88,9 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Trending", style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                        fontSize: 16, fontWeight: FontWeight.w600),
                     ),
-                    Text("See all", style: TextStyle(fontSize: 16),),
+                    Text("See all", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                   ],
                 ),
               ),
@@ -121,15 +121,15 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(right: 290.0),
-                                  child: Text("Europe",style: TextStyle(fontSize: 20,color: Colors.grey,fontWeight: FontWeight.w500),),
+                                  child: Text("Europe",style: TextStyle(fontSize: 18,color: Colors.grey,fontWeight: FontWeight.w500),),
                                 ),
-                                Text("${state.data.articles?[0].title}",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),),
+                                Text("${state.data.articles?[0].title}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
                                 Row(
 
                                   children: [
-                                    Text('${state.data.articles?[0].source?.name}',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                                    Text('${state.data.articles?[0].source?.name}',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
                                     SizedBox(width: 19,),
-                                    Text('  ${state.data.articles?[0].publishedAt}',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w500),),
+                                    Text('  ${state.data.articles?[0].publishedAt}',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
                                   ],
                                 ),
 
@@ -138,15 +138,19 @@ class _HomePageState extends State<HomePage> {
                           ),
                           SizedBox(height: 10,),
                           Padding(
-                            padding: const EdgeInsets.only(left:12,right: 12),
+                            padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Latest",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),),
-                                Text("See all",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                                Text("Latest", style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                                ),
+                                Text("See all", style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
                               ],
                             ),
-                          )
+                          ),
+
+
                         ],
                       );
                     } else if (state is NewsFailureState) {
