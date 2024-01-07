@@ -10,6 +10,9 @@ part 'network_service.g.dart';
 abstract class NetworkService {
   factory NetworkService(Dio dio, {String baseUrl}) = _NetworkService;
 
+  @GET('/everything?domains=wsj.com&apiKey=d4bb802cd5434447a51f0477f58e5e22')
+  Future<TrendingNewsModel> allNews();
+
   @GET('/top-headlines')
   Future<TrendingNewsModel> getTrendingNews(
     @Query('country') String country,

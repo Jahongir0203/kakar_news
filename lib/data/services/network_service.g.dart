@@ -21,6 +21,33 @@ class _NetworkService implements NetworkService {
   String? baseUrl;
 
   @override
+  Future<TrendingNewsModel> allNews() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<TrendingNewsModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/everything?domains=wsj.com&apiKey=d4bb802cd5434447a51f0477f58e5e22',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = TrendingNewsModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<TrendingNewsModel> getTrendingNews(
     String country,
     String apiKey,

@@ -3,14 +3,15 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../models/treding_Model/treding_model.dart';
-import '../../network_servis/network_servis.dart';
+import '../../models/trending_news_model.dart';
+import '../../services/network_service.dart';
+
 
 part 'news_event.dart';
 part 'news_state.dart';
 
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
-  final NetWorkService netWorkService;
+  final NetworkService netWorkService;
   NewsBloc(this.netWorkService) : super(NewsInitialState()) {
     //--------------------------------------------------------------------------
     // on<AppleEvent>((event, emit) async{
@@ -87,7 +88,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     //-------------------------------------------------------------------------------
     on<AllLoadedEvent>((event, emit) async{
       try{
-        ModelNews modelNews=await netWorkService.allNews();
+        TrendingNewsModel modelNews=await netWorkService.allNews();
 
         print(modelNews);
         if(modelNews!=null){

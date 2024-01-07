@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
@@ -6,7 +5,7 @@ import 'package:kakar_news/ui/pages/notification_page/notification_page.dart';
 import 'package:kakar_news/ui/pages/trending_page/trending_page.dart';
 
 import '../../../data/blocs/news_bloc/news_bloc.dart';
-import '../../../data/network_servis/network_servis.dart';
+import '../../../data/services/network_service.dart';
 import '../../../data/utils/app_png.dart';
 import '../bookmark_page/bookmark_page.dart';
 import '../explore_page/explore_page.dart';
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    NewsBloc newsBloc=NewsBloc(NetWorkService(Dio()));
+    NewsBloc newsBloc=NewsBloc(NetworkService(Dio()));
 
   
     return BlocProvider(
