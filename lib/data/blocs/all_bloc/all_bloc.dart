@@ -12,13 +12,12 @@ part 'all_state.dart';
 class AllBloc extends Bloc<AllEvent, AllState> {
   final NetworkService networkService;
   AllBloc(this.networkService) : super(AllInitial()) {
-    on<AllLoadedEvent>((event, emit) {
+    on<AllLoadedEvent>((event, emit)async {
       emit(AllLoading());
      try{
-       var response=networkService.allNews();
+       var response= await networkService.allNews();
 
-       emit(AllSucsess(response as TrendingNewsModel ));
-
+       emit(AllSucsess(response ));
      }
      catch(e){
        print(e);
