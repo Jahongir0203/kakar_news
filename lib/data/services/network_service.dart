@@ -9,8 +9,13 @@ part 'network_service.g.dart';
 @RestApi(baseUrl: 'https://newsapi.org/v2')
 abstract class NetworkService {
   factory NetworkService(Dio dio, {String baseUrl}) = _NetworkService;
+  @GET('/top-headlines')
+  Future<TrendingNewsModel> businessNews(
+      @Query('category') String category,
+      @Query('apiKey') String apiKey,
 
-  @GET('/everything?domains=wsj.com&apiKey=d4bb802cd5434447a51f0477f58e5e22')
+      );
+  @GET('/everything?domains=wsj.com&apiKey=57d556b41e0a40169cbecea58e562d76')
   Future<TrendingNewsModel> allNews();
 
   @GET('/top-headlines')
