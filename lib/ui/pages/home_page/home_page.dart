@@ -209,9 +209,9 @@ class _HomePageState extends State<HomePage> {
                       tabAlignment: TabAlignment.start,
                       tabs: [
                         Tab(text: 'All '),
-                        Tab(text: 'Apple '),
-                        Tab(text: 'Tesla '),
-                        Tab(text: 'Country '),
+                        Tab(text: 'Business '),
+                        Tab(text: 'Sports'),
+                        Tab(text: 'Entertainment '),
                         Tab(text: 'Technology '),
                       ],
                     ),
