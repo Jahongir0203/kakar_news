@@ -1,3 +1,4 @@
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
@@ -28,7 +29,6 @@ abstract class NetWorkService{
   //
   // @GET('/top-headlines?sources=techcrunch&apiKey=57d556b41e0a40169cbecea58e562d76')
   // Future<ModelNews> techcrunchNews();
-
 
 
   // 57d556b41e0a40169cbecea58e562d76
