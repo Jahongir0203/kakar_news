@@ -6,8 +6,8 @@ abstract class AllState {}
 class AllInitial extends AllState {}
 class AllLoading extends AllState {}
 class AllSucsess extends AllState {
-  final AllModel allModel;
+  final TrendingNewsModel trendingNewsModel;
 
-  AllSucsess(this.allModel);
+  AllSucsess(this.trendingNewsModel);
 }
 class AllFailur extends AllState {}
