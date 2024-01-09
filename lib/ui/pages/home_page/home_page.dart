@@ -5,6 +5,7 @@ import 'package:kakar_news/ui/pages/search_page/search_page.dart';
 
 import '../../../data/utils/app_colors.dart';
 import '../../../data/utils/app_png.dart';
+import '../../widgets/app_textStyle.dart';
 import '../bookmark_page/bookmark_page.dart';
 import '../explore_page/explore_page.dart';
 import '../notification_page/notification_page.dart';
@@ -282,10 +283,9 @@ class _HomePageState extends State<HomePage> {
                       CategoriesPage(category: 'Technology'),
                     ],
                   ),
-                ],
+                ),],
               ),
             ),
-          ],
         ),
       ),
     );
