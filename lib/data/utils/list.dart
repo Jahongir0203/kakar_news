@@ -57,3 +57,18 @@ List<String> topicsList = [
   'Money',
   'Travel',
 ];
+
+List<String> followers = [
+  '1.2M',
+  '784K',
+  '2.8M',
+  '78K',
+  '56M',
+  '345K',
+  '1.2M',
+  '784K',
+  '2.8M',
+  '78K',
+  '56M',
+  '345K',
+];

@@ -1,87 +1,150 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:dio/dio.dart';
-import '../../../data/blocs/all_bloc/all_bloc.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:kakar_news/data/blocs/allCategories_bloc/all_categories_bloc.dart';
+import 'package:kakar_news/data/services/network_service.dart';
 
-import '../../../data/services/network_service.dart';
+import '../../../data/utils/app_colors.dart';
 import '../../../data/utils/app_png.dart';
+import '../../widgets/app_textStyle.dart';
 
-class AllPage extends StatelessWidget {
-  const AllPage({Key? key}) : super(key: key);
+class AllCategoriesPage extends StatelessWidget {
+  AllCategoriesPage({Key? key}) : super(key: key);
+  AllCategoriesBloc allCategoriesBloc =
+      AllCategoriesBloc(NetworkService(Dio()));
 
   @override
   Widget build(BuildContext context) {
-    AllBloc allBloc = AllBloc(NetworkService(Dio()));
     return BlocProvider(
-      create: (context) => allBloc..add(AllLoadedEvent()),
-      child: BlocBuilder<AllBloc, AllState>(
+      create: (context) => allCategoriesBloc,
+      child: BlocBuilder<AllCategoriesBloc, AllCategoriesState>(
+        bloc: allCategoriesBloc..add(AllCategoriesLoadedEvent()),
         builder: (context, state) {
-          if (state is AllLoading) {
-            return CircularProgressIndicator();
-          } else if (state is AllSucsess) {
-            return Scaffold(
-              body: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Container(
-                  child: ListView.builder(
-                    itemCount: state.trendingNewsModel.articles?.length ?? 0,
-                    itemBuilder: (context, index) {
-                      var article = state.trendingNewsModel.articles![index];
-
-                      return Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                height: 96,
-                                width: 96,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: NetworkImage("${article.urlToImage ?? ""}"),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Expanded(child: Column(
-                                children: [
-                                  Text("${article.title ?? ""}",style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16),),
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                        AppPng.kBBC,
-                                        height: 20,
-                                      ),
-                                      Text("${article.source?.name}",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 13),),
-                                      SizedBox(width: 10,),
-                                      Icon(
-                                        Icons.watch_later_outlined,
-                                        size: 12,
-                                      ),
-                                      Text("${article.publishedAt?.substring(0, 10)}",style: TextStyle(fontWeight: FontWeight.w400,fontSize: 13),),
-                                    ],
-                                  ),
-                                ],
-                              )),
-                            ],
-                          ),
-
-                          // Add additional widgets as needed for each article
-                          SizedBox(height: 16), // Add spacing between articles
-                        ],
-                      );
-                    },
-                  ),
-
-                ),
-              ),
-            );
-          } else if (state is AllFailur) {
-            return Text('Failed to load data');
-          }
-          return Container();
+          return Scaffold(
+            body: buildAllCategoryBody(context, state),
+          );
         },
       ),
     );
+  }
+
+  buildAllCategoryBody(BuildContext context, AllCategoriesState state) {
+    if (state is AllCategoriesLoadInProgressState) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+    if (state is AllCategoriesFailureState) {
+      return const Center(
+        child: Text('Error'),
+      );
+    }
+
+    if(state is AllCategoriesLoadSuccessState){
+      return SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        child: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: state.allCategoriesModel.articles?.length ?? 0,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.only(top: 16,),
+              child: SizedBox(
+                height: 115,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                        flex: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 8,bottom: 8,left: 8,right: 4,),
+                          child: SizedBox(
+                            height: 96,
+                            width: 96,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(6),
+                              child: AspectRatio(
+                                aspectRatio: 1.6,
+                                child: BlurHash(
+                                  hash: "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+                                  imageFit: BoxFit.fill,
+                                  image: state.allCategoriesModel
+                                      .articles?[index].urlToImage ??
+                                      'https://s.france24.com/media/display/d1676b6c-0770-11e9-8595-005056a964fe/w:1280/p:16x9/news_1920x1080.png',
+                                ),
+                              ),
+                            ),
+                          ),
+                        )),
+                    Expanded(
+                      flex: 5,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical:8, ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'USA',
+                              style: buildTextStyle(
+                                color: AppColors.kGreyScale,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4,),
+                              child: Text(
+                                '${state.allCategoriesModel.articles![index].title}',
+                                maxLines:2,
+                                softWrap: false,
+                                overflow: TextOverflow.ellipsis,
+                                style: buildTextStyle(
+                                  color: AppColors.kBlack,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    AppPng.kBBC,
+                                    height: 20,
+                                    width: 20,
+                                  ),
+                                  const SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    state.allCategoriesModel.articles?[index].source?.name?? 'Uch savdoyi',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: buildTextStyle(
+                                      color: AppColors.kGreyScale,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w600,
+                                    ),),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      );
+    }
+
   }
 }
