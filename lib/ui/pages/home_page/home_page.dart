@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                   controller: textEditingController,
                   decoration: InputDecoration(
                     prefixIcon: IconButton(onPressed: (){
-                      Navigator.pushNamed(context, ExplorePage.routeName);
+                      Navigator.pushNamed(context, SearchPage.routeName);
                     }, icon:const Icon(Icons.search),),
                     border: OutlineInputBorder(),
                     hintText: "Search",

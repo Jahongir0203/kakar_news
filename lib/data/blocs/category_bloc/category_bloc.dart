@@ -15,7 +15,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     on<CategoryLoadedEvent>((event, emit)async {
       emit(CategoryLoading());
       try{
-        var response=await networkService.businessNews(event.category, "29397755bab44c4a861e2f85acd9d755");
+        var response=await networkService.exploreNews(event.sources, "29397755bab44c4a861e2f85acd9d755");
         emit(CategorySucsess(response));
         
       }catch(e){

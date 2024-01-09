@@ -21,13 +21,13 @@ class _NetworkService implements NetworkService {
   String? baseUrl;
 
   @override
-  Future<TrendingNewsModel> businessNews(
-    String category,
+  Future<TrendingNewsModel> exploreNews(
+    String sources,
     String apiKey,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'category': category,
+      r'sources': sources,
       r'apiKey': apiKey,
     };
     final _headers = <String, dynamic>{};
@@ -67,7 +67,7 @@ class _NetworkService implements NetworkService {
     )
             .compose(
               _dio.options,
-              '/everything?domains=wsj.com&apiKey=57d556b41e0a40169cbecea58e562d76',
+              '/everything?domains=wsj.com&apiKey=29397755bab44c4a861e2f85acd9d755',
               queryParameters: queryParameters,
               data: _data,
             )
