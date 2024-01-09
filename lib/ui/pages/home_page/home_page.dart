@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:kakar_news/data/utils/app_svg.dart';
 import 'package:kakar_news/ui/pages/search_page/search_page.dart';
 
+import '../../../data/utils/app_colors.dart';
 import '../../../data/utils/app_png.dart';
+import '../../widgets/app_textStyle.dart';
 import '../bookmark_page/bookmark_page.dart';
 import '../explore_page/explore_page.dart';
 import '../notification_page/notification_page.dart';
 import '../trending_page/trending_page.dart';
+import 'all_page.dart';
+import 'categories_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -42,11 +48,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Navigator.pushNamed(context, NotificationPage.routeName);
                   },
-                  child: Image.asset(
-                    AppPng.kRingBall,
-                    height: 45,
-                    width: 45,
-                  ),
+                  child: SvgPicture.asset(AppSvg.kNotification),
                 ),
               ],
             ),
@@ -144,8 +146,8 @@ class _HomePageState extends State<HomePage> {
                   width: 360,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
-                      image: AssetImage(AppPng.kTreding),
+                    image:  DecorationImage(
+                      image: AssetImage(AppPng.kTrending),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -281,10 +283,9 @@ class _HomePageState extends State<HomePage> {
                       CategoriesPage(category: 'Technology'),
                     ],
                   ),
-                ],
+                ),],
               ),
             ),
-          ],
         ),
       ),
     );
