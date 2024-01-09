@@ -21,19 +21,19 @@ class _NetworkService implements NetworkService {
   String? baseUrl;
 
   @override
-  Future<TrendingNewsModel> exploreNews(
-    String sources,
+  Future<CategoriesModel> getCategoriesNews(
+    String category,
     String apiKey,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'sources': sources,
+      r'category': category,
       r'apiKey': apiKey,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<TrendingNewsModel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<CategoriesModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -49,25 +49,31 @@ class _NetworkService implements NetworkService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = TrendingNewsModel.fromJson(_result.data!);
+    final value = CategoriesModel.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<TrendingNewsModel> allNews() async {
+  Future<AllCategoriesModel> allNews(
+    String domains,
+    String apiKey,
+  ) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'domains': domains,
+      r'apiKey': apiKey,
+    };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<TrendingNewsModel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<AllCategoriesModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/everything?domains=wsj.com&apiKey=29397755bab44c4a861e2f85acd9d755',
+              '/everything',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -76,7 +82,7 @@ class _NetworkService implements NetworkService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = TrendingNewsModel.fromJson(_result.data!);
+    final value = AllCategoriesModel.fromJson(_result.data!);
     return value;
   }
 

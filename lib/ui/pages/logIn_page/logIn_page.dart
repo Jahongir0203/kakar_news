@@ -239,7 +239,7 @@ class LogInPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               onPressed: (){
-                                Navigator.pushNamed(context,CountryPage.routeName);
+                                Navigator.pushNamed(context,ForgotPasswordPage.routeName);
 
                               },
                               child: Center(

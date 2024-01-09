@@ -19,4 +19,6 @@ class AppColors {
   ///On bu OnBoardingdagi rang
   static const Color Onblue = Color(0xFF1877F2);
   static const Color OnText = Color(0xFF4E4B66);
+
+  static const Color forgotPassword= Color(0xFFEEF1F4);
 }
