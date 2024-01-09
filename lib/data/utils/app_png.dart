@@ -65,4 +65,5 @@ class AppPng {
   static const String kPolsha= 'assets/png/Polsha.png';
   static const String kRossiya= 'assets/png/Rossiya.png';
   static const String kAmerikaQoshmaShtatlari= 'assets/png/AmerikaQoʻshmaShtatlari.png';
+  static const String kTrending ='assets/png/image_1.png';
 }
