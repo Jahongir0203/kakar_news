@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kakar_news/ui/pages/search_page/search_page.dart';
 
 import '../../../data/utils/app_png.dart';
+import '../authorProfile_page/authorProfile_page.dart';
 import '../bookmark_page/bookmark_page.dart';
 import '../explore_page/explore_page.dart';
 import '../notification_page/notification_page.dart';
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                   controller: textEditingController,
                   decoration: InputDecoration(
                     prefixIcon: IconButton(onPressed: (){
-                      Navigator.pushNamed(context, SearchPage.routeName);
+                      Navigator.pushNamed(context, AuthorProfilePage.routeName);
                     }, icon:const Icon(Icons.search),),
                     border: OutlineInputBorder(),
                     hintText: "Search",
