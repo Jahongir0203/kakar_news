@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                   controller: textEditingController,
                   decoration: InputDecoration(
                     prefixIcon: IconButton(onPressed: (){
-                      Navigator.pushNamed(context, SearchPage.routeName);
+                      Navigator.pushNamed(context, ExplorePage.routeName);
                     }, icon:const Icon(Icons.search),),
                     border: OutlineInputBorder(),
                     hintText: "Search",
@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                               height: 20,
                             ),
                             Text(
-                              'BBC News', // You need to replace this with the actual source name
+                              'BBC News',
                               style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w600),
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                               size: 12,
                             ),
                             Text(
-                              'Date', // You need to replace this with the actual date
+                              'Date',
                               style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w400),

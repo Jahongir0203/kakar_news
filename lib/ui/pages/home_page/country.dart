@@ -44,15 +44,15 @@ class Country extends StatelessWidget {
                                 child: Image.network(
                                   "${article.urlToImage ?? ""}",
                                   fit: BoxFit.fill,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    // Error occurred while loading the image
-                                    return Center(
-                                      child: Icon(
-                                        Icons.error,
-                                        color: Colors.red,size: 100,
-                                      ),
-                                    );
-                                  },
+                                  // errorBuilder: (context, error, stackTrace) {
+                                  //   // Error occurred while loading the image
+                                  //   return Center(
+                                  //     child: Icon(
+                                  //       Icons.error,
+                                  //       color: Colors.red,size: 100,
+                                  //     ),
+                                  //   );
+                                  // },
                                 ),
                               ),
 
