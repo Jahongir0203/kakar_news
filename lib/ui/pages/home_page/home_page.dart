@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kakar_news/data/utils/app_svg.dart';
 import 'package:kakar_news/ui/pages/search_page/search_page.dart';
-import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
 import '../../../data/utils/app_colors.dart';
 import '../../../data/utils/app_png.dart';
@@ -283,10 +282,10 @@ class _HomePageState extends State<HomePage> {
                       CategoriesPage(category: 'Technology'),
                     ],
                   ),
-                )
-              ],
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
