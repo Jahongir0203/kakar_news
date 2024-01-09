@@ -18,6 +18,9 @@ import 'package:kakar_news/ui/pages/trending_page/trending_page.dart';
 import 'package:kakar_news/ui/pages/verification_page/verification_page.dart';
 
 import '../../ui/pages/detail_page/detail_page.dart';
+import '../../ui/pages/search_page/author_page/author_page.dart';
+import '../../ui/pages/search_page/news_page/news_page.dart';
+import '../../ui/pages/search_page/topics_page/topics_page.dart';
 import '../../ui/pages/splash_page/splash_page.dart';
 
 class AppRouteUtils {
@@ -99,6 +102,19 @@ class AppRouteUtils {
       case VerificationPage.routeName:
         return CupertinoPageRoute(
           builder: (context) => VerificationPage(),
+        );
+      case NewsPage.routeName:
+        return CupertinoPageRoute(
+          builder: (context) => NewsPage(),
+        );
+
+      case AuthorPage.routeName:
+        return CupertinoPageRoute(
+          builder: (context) => AuthorPage(),
+        );
+      case SearchTopicsPage.routeName:
+        return CupertinoPageRoute(
+          builder: (context) => SearchTopicsPage(),
         );
     }
     return null;

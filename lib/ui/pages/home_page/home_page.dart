@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kakar_news/ui/pages/search_page/search_page.dart';
 
 import '../../../data/utils/app_png.dart';
 import '../bookmark_page/bookmark_page.dart';
@@ -68,6 +69,9 @@ class _HomePageState extends State<HomePage> {
                 child: TextField(
                   controller: textEditingController,
                   decoration: InputDecoration(
+                    prefixIcon: IconButton(onPressed: (){
+                      Navigator.pushNamed(context, SearchPage.routeName);
+                    }, icon:const Icon(Icons.search),),
                     border: OutlineInputBorder(),
                     hintText: "Search",
                     hintStyle: TextStyle(fontSize: 20),
