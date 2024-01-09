@@ -48,13 +48,13 @@ class AuthorProfilePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
-                height: 50,width: 182,
+                height: 50,width: 162,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),color: Colors.blue
                 ),
                 child: Text("Following",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
               ), Container(
-                height: 50,width: 182,
+                height: 50,width: 162,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),color: Colors.blue
                 ),
