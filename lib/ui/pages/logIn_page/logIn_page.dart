@@ -6,6 +6,7 @@ import 'package:kakar_news/data/utils/app_svg.dart';
 import 'package:kakar_news/ui/pages/country_page/country_page.dart';
 import 'package:kakar_news/ui/pages/forgotPassword_page/forgotPassword_page.dart';
 import 'package:kakar_news/ui/pages/signUp_page/signUp_page.dart';
+import 'package:kakar_news/ui/pages/verification_page/verification_page.dart';
 
 import '../../widgets/app_textStyle.dart';
 import '../../widgets/google_facebook_button.dart';
@@ -239,7 +240,7 @@ class LogInPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               onPressed: (){
-                                Navigator.pushNamed(context,ForgotPasswordPage.routeName);
+                                Navigator.pushNamed(context,VerificationPage.routeName);
 
                               },
                               child: Center(
@@ -304,7 +305,7 @@ class LogInPage extends StatelessWidget {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, SignUpPage.routeName);
+                                  Navigator.pushNamed(context, SignUpPage.routeName);
                                 },
                                 child: Text(
                                   'Sign Up',
