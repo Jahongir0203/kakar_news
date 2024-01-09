@@ -55,6 +55,11 @@ static const String kCNBC='assets/png/ic_CNBC.png';
   static const String kBuzzFood='assets/png/ic_BuzzFood.png';
   static const String kDailyMail='assets/png/ic_DailyMail.png';
   static const String kTreding='assets/png/treding.png';
+  ///explore page ucun
+  static const String kicon='assets/png/img.png';
+  static const String khealth='assets/png/health.png';
+  static const String ktexnolgy='assets/png/texnalogy.png';
+  static const String kart='assets/png/art.png';
 
 
 }

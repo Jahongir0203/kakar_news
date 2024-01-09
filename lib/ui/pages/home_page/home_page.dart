@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kakar_news/data/utils/app_colors.dart';
-import 'package:kakar_news/ui/pages/home_page/all_page.dart';
-import 'package:kakar_news/ui/pages/home_page/categories_page.dart';
 import 'package:kakar_news/ui/pages/search_page/search_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
