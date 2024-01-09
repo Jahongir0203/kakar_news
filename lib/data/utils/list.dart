@@ -1,5 +1,3 @@
-import 'package:kakar_news/data/utils/app_svg.dart';
-
 import 'app_png.dart';
 
 List<String> topics = [
@@ -39,4 +37,38 @@ List<String> icNewsSources = [
   AppPng.kTime,
   AppPng.kBuzzFood,
   AppPng.kDailyMail,
+];
+
+List<String> topicsList = [
+  'Health',
+  'Technology',
+  'Art',
+  'Politics',
+  'Sport',
+  'History',
+  'Money',
+  'Travel',
+  'Health',
+  'Technology',
+  'Art',
+  'Politics',
+  'Sport',
+  'History',
+  'Money',
+  'Travel',
+];
+
+List<String> followers = [
+  '1.2M',
+  '784K',
+  '2.8M',
+  '78K',
+  '56M',
+  '345K',
+  '1.2M',
+  '784K',
+  '2.8M',
+  '78K',
+  '56M',
+  '345K',
 ];

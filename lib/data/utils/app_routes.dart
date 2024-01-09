@@ -19,7 +19,6 @@ import 'package:kakar_news/ui/pages/verification_page/verification_page.dart';
 
 import '../../ui/pages/detail_page/detail_page.dart';
 import '../../ui/pages/splash_page/splash_page.dart';
-import '../../ui/pages/verification_page/verifycation_password.dart';
 
 class AppRouteUtils {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -100,10 +99,6 @@ class AppRouteUtils {
       case VerificationPage.routeName:
         return CupertinoPageRoute(
           builder: (context) => VerificationPage(),
-        );
-      case VerificationPassword.routeName:
-        return CupertinoPageRoute(
-          builder: (context) => VerificationPassword(),
         );
     }
     return null;

@@ -15,6 +15,7 @@ class AppColors {
   static const Color kNewsContainer=Color(0xFFFAFAFA);
   static const Color kSourcesBG=Color(0xFFEEF1F4);
   static const Color white = Colors.white;
+
   ///On bu OnBoardingdagi rang
   static const Color Onblue = Color(0xFF1877F2);
   static const Color OnText = Color(0xFF4E4B66);

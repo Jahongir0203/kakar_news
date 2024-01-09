@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakar_news/data/blocs/topics_bloc/topics_bloc.dart';
 import 'package:kakar_news/data/utils/list.dart';
-import 'package:kakar_news/ui/pages/newsSource_page/newsSource_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
-import 'package:kakar_news/ui/widgets/next_button.dart';
 
 import '../../../data/utils/app_colors.dart';
+import '../../widgets/next_button.dart';
+import '../newsSource_page/newsSource_page.dart';
 
 class TopicsPage extends StatelessWidget {
   TopicsPage({Key? key}) : super(key: key);
@@ -117,11 +117,10 @@ class TopicsPage extends StatelessWidget {
                                 topics[index],
                                 maxLines: 1,
                                 style: buildTextStyle(
-                                  color:
-                                      state is TopicsButtonLoadSuccessState &&
-                                              index == state.index
-                                          ? AppColors.kWhite
-                                          : AppColors.kPrimaryBlue,
+                                  color: state is TopicsButtonLoadSuccessState &&
+                                      index == state.index
+                                      ? AppColors.kWhite
+                                      : AppColors.kPrimaryBlue,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                 ),
