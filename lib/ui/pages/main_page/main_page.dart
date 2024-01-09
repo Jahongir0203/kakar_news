@@ -12,9 +12,9 @@ class MainPage extends StatelessWidget {
   static const String routeName = '/mainPage';
   MainPageBloc mainPageBloc = MainPageBloc();
   List pages = [
-    const HomePage(),
-    const ExplorePage(),
-    const BookMarkPage(),
+     HomePage(),
+    ExplorePage(),
+     BookMarkPage(),
   ];
 
   @override

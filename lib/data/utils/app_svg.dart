@@ -10,6 +10,6 @@ class AppSvg {
   static const String kActHome = 'assets/svg/ic_homeAct.svg';
   static const String kActExplore = 'assets/svg/ic_exploreAct.svg';
   static const String kActBookMark = 'assets/svg/ic_bookmarkAct.svg';
-
+static const String kNotification='assets/svg/ic_notification.svg';
 
 }

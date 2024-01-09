@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kakar_news/data/blocs/category_bloc/category_bloc.dart';
+import 'package:kakar_news/data/blocs/allCategories_bloc/all_categories_bloc.dart';
 import 'package:kakar_news/data/utils/app_png.dart';
 import 'package:dio/dio.dart';
 
@@ -11,13 +11,12 @@ import '../../widgets/app_textStyle.dart';
 class ExplorePage extends StatelessWidget {
   ExplorePage({Key? key}) : super(key: key);
   static const routeName = '/explorePage';
-
+AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
   @override
   Widget build(BuildContext context) {
-    CategoryBloc categoryBloc = CategoryBloc(NetworkService(Dio()));
     return BlocProvider(
-      create: (context) => categoryBloc..add(CategoryLoadedEvent("techcrunch")),
-      child: BlocBuilder<CategoryBloc, CategoryState>(
+      create: (context) => allCategoriesBloc,
+      child: BlocBuilder<AllCategoriesBloc, AllCategoriesState>(
         builder: (context, state) {
           return Scaffold(
               body: Padding(
@@ -57,7 +56,7 @@ class ExplorePage extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: Image.asset(
-                                AppPng.khealth,
+                                AppPng.kBBC,
                                 height: 70,
                                 width: 70,
                               ),
@@ -107,7 +106,7 @@ class ExplorePage extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: Image.asset(
-                                AppPng.ktexnolgy,
+                                AppPng.kBBC,
                                 height: 70,
                                 width: 70,
                               ),
@@ -154,7 +153,7 @@ class ExplorePage extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: Image.asset(
-                                AppPng.kart,
+                                AppPng.kBBC,
                                 height: 70,
                                 width: 70,
                               ),
@@ -217,15 +216,15 @@ class ExplorePage extends StatelessWidget {
 
 
 
-  Widget getBody(CategoryState state) {
-    if (state is CategoryLoading) {
+  Widget getBody(AllCategoriesState state) {
+    if (state is AllCategoriesLoadInProgressState) {
       return CircularProgressIndicator();
     }
-    if (state is CategorySucsess) {
+    if (state is AllCategoriesLoadSuccessState) {
       return ListView.builder(
-        itemCount: state.trendingNewsModel.articles?.length ?? 0,
+        itemCount: state.allCategoriesModel.articles?.length ?? 0,
         itemBuilder: (context, index) {
-          var article = state.trendingNewsModel.articles?[index];
+          var article = state.allCategoriesModel.articles?[index];
           return Column(
             children: [
               Container(
@@ -268,7 +267,7 @@ class ExplorePage extends StatelessWidget {
                               width: 4,
                             ),
                             Text(
-                              state.trendingNewsModel.articles?[index].source
+                              state.allCategoriesModel.articles?[index].source
                                       ?.name ??
                                   'BBC News',
                               style: buildTextStyle(
@@ -288,7 +287,7 @@ class ExplorePage extends StatelessWidget {
                               width: 4,
                             ),
                             Text(
-                              ' ${state.trendingNewsModel.articles![index].publishedAt?.substring(0, 10)}',
+                              ' ${state.allCategoriesModel.articles![index].publishedAt?.substring(0, 10)}',
                               style: buildTextStyle(
                                 color: AppColors.kGreyScale,
                                 fontSize: 13,
@@ -318,7 +317,7 @@ class ExplorePage extends StatelessWidget {
         },
       );
     }
-    if (state is CategoryFailur) {
+    if (state is AllCategoriesFailureState) {
       return Text("Error");
     }
     return Container(); // Return an empty container if none of the above conditions are met

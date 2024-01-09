@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kakar_news/data/blocs/allCategories_bloc/all_categories_bloc.dart';
 import 'package:kakar_news/data/utils/app_png.dart';
 import 'package:dio/dio.dart';
-import '../../../data/blocs/all_bloc/all_bloc.dart';
 import '../../../data/services/network_service.dart';
 import '../../../data/utils/app_colors.dart';
 import '../../widgets/app_textStyle.dart';
 
 class BookMarkPage extends StatelessWidget {
-  const BookMarkPage({Key? key}) : super(key: key);
+   BookMarkPage({Key? key}) : super(key: key);
   static const routeName = '/bookmarkPage';
-
+AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
   @override
   Widget build(BuildContext context) {
     TextEditingController textEditingController = TextEditingController();
-    AllBloc allBloc = AllBloc(NetworkService(Dio()));
     return BlocProvider(
-      create: (context) => allBloc..add(AllLoadedEvent()),
-      child: BlocBuilder<AllBloc, AllState>(
+      create: (context) => allCategoriesBloc,
+      child: BlocBuilder<AllCategoriesBloc, AllCategoriesState>(
+        bloc: allCategoriesBloc..add(AllCategoriesLoadedEvent()),
         builder: (context, state) {
-          if (state is AllLoading) {
+          if (state is AllCategoriesLoadInProgressState) {
             return Scaffold(
               body: Center(
                 child: CircularProgressIndicator(),
               ),
             );
-          } else if (state is AllSucsess) {
+          } else if (state is AllCategoriesLoadSuccessState) {
             return Scaffold(
 
               body: Padding(
@@ -47,7 +47,7 @@ class BookMarkPage extends StatelessWidget {
                           border: OutlineInputBorder(),
                           hintText: "Search",
                           suffix: Image.asset(
-                            AppPng.kicon,
+                            AppPng.kBBC,
                             height: 24,
                             width: 24,
                           ),
@@ -56,9 +56,9 @@ class BookMarkPage extends StatelessWidget {
                     ),
                     Expanded(
                       child: ListView.builder(
-                        itemCount: state.trendingNewsModel.articles?.length ?? 0,
+                        itemCount: state.allCategoriesModel.articles?.length ?? 0,
                         itemBuilder: (context, index) {
-                          var article = state.trendingNewsModel.articles![index];
+                          var article = state.allCategoriesModel.articles![index];
 
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +83,7 @@ class BookMarkPage extends StatelessWidget {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          state.trendingNewsModel.articles![index].author ?? 'BBC News',
+                                          state.allCategoriesModel.articles![index].author ?? 'BBC News',
                                           style: buildTextStyle(
                                             color: AppColors.kGreyScale,
                                             fontSize: 13,
@@ -130,7 +130,7 @@ class BookMarkPage extends StatelessWidget {
                 ),
               ),
             );
-          } else if (state is AllFailur) {
+          } else if (state is AllCategoriesFailureState) {
             return Scaffold(
               body: Center(
                 child: Text('Failed to load data'),
