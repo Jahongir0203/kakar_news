@@ -24,6 +24,7 @@ class MainPage extends StatelessWidget {
       child: BlocBuilder<MainPageBloc, MainPageState>(
         builder: (context, state) {
           return Scaffold(
+            body: state is MainPageLoadSuccessState? pages[state.index]:pages[0],
             bottomNavigationBar: BottomNavigationBar(
               showSelectedLabels: true,
               showUnselectedLabels: true,
@@ -31,6 +32,7 @@ class MainPage extends StatelessWidget {
               unselectedItemColor: AppColors.kGreyScale,
               currentIndex: state is MainPageLoadSuccessState? state.index:0 ,
               onTap: (e) {
+                print(e);
                mainPageBloc.add(MainPageLoadedEvent(e));
               },
               items: const [

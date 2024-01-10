@@ -16,6 +16,7 @@ import 'package:kakar_news/ui/pages/signUp_page/signUp_page.dart';
 import 'package:kakar_news/ui/pages/topics_page/topics_page.dart';
 import 'package:kakar_news/ui/pages/trending_page/trending_page.dart';
 import 'package:kakar_news/ui/pages/verification_page/verification_page.dart';
+import 'package:kakar_news/ui/pages/verification_page/verifycation_password.dart';
 
 import '../../ui/pages/detail_page/detail_page.dart';
 import '../../ui/pages/splash_page/splash_page.dart';
@@ -99,6 +100,10 @@ class AppRouteUtils {
       case VerificationPage.routeName:
         return CupertinoPageRoute(
           builder: (context) => VerificationPage(),
+        );
+      case VerificationPassword.routeName:
+        return CupertinoPageRoute(
+          builder: (context) => VerificationPassword(),
         );
     }
     return null;

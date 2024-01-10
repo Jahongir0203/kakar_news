@@ -19,196 +19,201 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
       child: BlocBuilder<AllCategoriesBloc, AllCategoriesState>(
         builder: (context, state) {
           return Scaffold(
-              body: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16, top: 24),
-                  child: Column(children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 230),
-                      child: Text(
-                        "Explore",
-                        style: TextStyle(
-                            fontSize: 32, fontWeight: FontWeight.w700),
+              body: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 16.0, right: 16, top: 24),
+                    child: Column(children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 230),
+                        child: Text(
+                          "Explore",
+                          style: TextStyle(
+                              fontSize: 32, fontWeight: FontWeight.w700),
+                        ),
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Topic",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 16),
-                        ),
-                        Text(
-                          "See all",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Image.asset(
-                                AppPng.kBBC,
-                                height: 70,
-                                width: 70,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Topic",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 16),
+                          ),
+                          Text(
+                            "See all",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 14),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Image.asset(
+                                  AppPng.kBBC,
+                                  height: 70,
+                                  width: 70,
+                                ),
                               ),
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  "Heatlh                        ",
+                              Column(
+                                children: [
+                                  Text(
+                                    "Heatlh                        ",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Text(
+                                    "Get energizing workout\nmoves,healthlyrecipes...",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 26,
+                              ),
+                              Container(
+                                height: 34,
+                                width: 78,
+                                decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.blue),
+                                    borderRadius: BorderRadius.circular(6),
+                                    color: Colors.white),
+                                child: Center(
+                                    child: Text(
+                                  "Save",
                                   style: TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400),
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.blue),
+                                )),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Image.asset(
+                                  AppPng.kBBC,
+                                  height: 70,
+                                  width: 70,
                                 ),
-                                Text(
-                                  "Get energizing workout\nmoves,healthlyrecipes...",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 26,
-                            ),
-                            Container(
-                              height: 34,
-                              width: 78,
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(6),
-                                  color: Colors.white),
-                              child: Center(
-                                  child: Text(
-                                "Save",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Texnalogy                        ",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Text(
+                                    "The application scientific\nknowledeg to the practi...",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                height: 34,
+                                width: 78,
+                                decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.blue),
+                                    borderRadius: BorderRadius.circular(6),
                                     color: Colors.blue),
-                              )),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 25,
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Image.asset(
-                                AppPng.kBBC,
-                                height: 70,
-                                width: 70,
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  "Texnalogy                        ",
+                                child: Center(
+                                    child: Text(
+                                  "Saved",
                                   style: TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400),
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                )),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Image.asset(
+                                  AppPng.kBBC,
+                                  height: 70,
+                                  width: 70,
                                 ),
-                                Text(
-                                  "The application scientific\nknowledeg to the practi...",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
-                            Container(
-                              height: 34,
-                              width: 78,
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(6),
-                                  color: Colors.blue),
-                              child: Center(
-                                  child: Text(
-                                "Saved",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white),
-                              )),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 25,
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Image.asset(
-                                AppPng.kBBC,
-                                height: 70,
-                                width: 70,
                               ),
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  "Art                                    ",
+                              Column(
+                                children: [
+                                  Text(
+                                    "Art                                    ",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Text(
+                                    "Art is a diverse range of\nhuman activity and result...",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Container(
+                                height: 34,
+                                width: 78,
+                                decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.blue),
+                                    borderRadius: BorderRadius.circular(6),
+                                    color: Colors.blue),
+                                child: Center(
+                                    child: Text(
+                                  "Saved",
                                   style: TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                Text(
-                                  "Art is a diverse range of\nhuman activity and result...",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Container(
-                              height: 34,
-                              width: 78,
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(6),
-                                  color: Colors.blue),
-                              child: Center(
-                                  child: Text(
-                                "Saved",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white),
-                              )),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Popular Topic                                                   ",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                    ),
-                    Expanded(
-                      child: getBody(state),
-                    ),
-                  ])));
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                )),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        "Popular Topic                                                   ",
+                        style:
+                            TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                          height: 500,
+                          child: getBody(state)),
+                    ])),
+              ));
         },
       ),
     );
@@ -216,12 +221,15 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
 
 
 
-  Widget getBody(AllCategoriesState state) {
+   getBody(AllCategoriesState state) {
     if (state is AllCategoriesLoadInProgressState) {
       return CircularProgressIndicator();
     }
     if (state is AllCategoriesLoadSuccessState) {
+      print('asdfg');
       return ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
         itemCount: state.allCategoriesModel.articles?.length ?? 0,
         itemBuilder: (context, index) {
           var article = state.allCategoriesModel.articles?[index];
@@ -320,6 +328,5 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
     if (state is AllCategoriesFailureState) {
       return Text("Error");
     }
-    return Container(); // Return an empty container if none of the above conditions are met
   }
 }

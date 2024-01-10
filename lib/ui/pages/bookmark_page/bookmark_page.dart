@@ -20,7 +20,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
         bloc: allCategoriesBloc..add(AllCategoriesLoadedEvent()),
         builder: (context, state) {
           if (state is AllCategoriesLoadInProgressState) {
-            return Scaffold(
+            return const Scaffold(
               body: Center(
                 child: CircularProgressIndicator(),
               ),
@@ -32,19 +32,19 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                 padding: const EdgeInsets.only(left: 16.0,right: 16,top: 24),
                 child: Column(
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(right: 187),
                       child: Text(
                         "Bookmark",
                         style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: 48,
                       child: TextField(
                         controller: textEditingController,
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                          border: const OutlineInputBorder(),
                           hintText: "Search",
                           suffix: Image.asset(
                             AppPng.kBBC,
@@ -72,18 +72,19 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       image: DecorationImage(
-                                        image: NetworkImage("${article.urlToImage ?? ""}"),
+                                        image: NetworkImage(article.urlToImage ?? ""),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Expanded(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           state.allCategoriesModel.articles![index].author ?? 'BBC News',
+                                          overflow: TextOverflow.ellipsis,
                                           style: buildTextStyle(
                                             color: AppColors.kGreyScale,
                                             fontSize: 13,
@@ -91,8 +92,8 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                           ),
                                         ),
                                         Text(
-                                          "${article.title ?? ""}",
-                                          style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+                                          article.title ?? "",
+                                          style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                                         ),
                                         Row(
                                           children: [
@@ -102,16 +103,16 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                             ),
                                             Text(
                                               "${article.source?.name}",
-                                              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+                                              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
                                             ),
-                                            SizedBox(width: 10),
-                                            Icon(
+                                            const SizedBox(width: 10),
+                                            const Icon(
                                               Icons.watch_later_outlined,
                                               size: 12,
                                             ),
                                             Text(
                                               "${article.publishedAt?.substring(5, 10)}",
-                                              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 13),
+                                              style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 13),
                                             ),
                                           ],
                                         ),
@@ -120,7 +121,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 16),
+                              const SizedBox(height: 16),
                             ],
                           );
                         },
@@ -131,7 +132,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
               ),
             );
           } else if (state is AllCategoriesFailureState) {
-            return Scaffold(
+            return const Scaffold(
               body: Center(
                 child: Text('Failed to load data'),
               ),

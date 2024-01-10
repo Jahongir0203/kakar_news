@@ -7,11 +7,13 @@ static const routeName='/forgotPasswordPage';
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: TextButton(
-          onPressed: (){
-            Navigator.pushReplacementNamed(context, '/countryPage');
-          },
-          child: Text("Next"),
+        child: Center(
+          child: TextButton(
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/countryPage');
+            },
+            child: Text("Next"),
+          ),
         ),
       ),
     );

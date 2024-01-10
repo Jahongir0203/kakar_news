@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakar_news/data/blocs/newsSources_bloc/news_sources_bloc.dart';
@@ -179,10 +180,10 @@ class NewsSourcePage extends StatelessWidget {
             bottomNavigationBar: nextButton(
               context,
               () {
-                Navigator.pushNamed(context, MainPage.routeName);
+                Navigator.push(context, CupertinoPageRoute(builder: (context) => MainPage(),));
                // Navigator.pushNamed(context, FillProfilePage.routeName);
               },
-              40,
+              40
             ),
           );
         },
