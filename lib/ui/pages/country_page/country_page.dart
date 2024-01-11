@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kakar_news/ui/pages/topics_page/topics_page.dart';
 import 'package:kakar_news/ui/widgets/next_button.dart';
 
+import '../../../data/utils/app_colors.dart';
 import '../../../data/utils/app_png.dart';
 
 class CountryPage extends StatefulWidget {
@@ -120,27 +121,42 @@ class _CountryPageState extends State<CountryPage> {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 32.0, right: 18),
-            child: Container(
-              height: 50,
-              width: 300,
-              child: TextField(
-                controller: textEditingController,
-                onChanged: filterCountries,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Search",
-                  hintStyle: TextStyle(fontSize: 22),
-                  suffix: IconButton(
-                    onPressed: () {
-                      // textEditingController.clear();
-                      // filterCountries('');
-                    },
-                    icon: Padding(
-                      padding: const EdgeInsets.only(top: 18.0, bottom: 20),
-                      child: Icon(Icons.search, size: 30),
-                    ),
+          Container(
+            height: 47,
+            width: 350,
+            child: TextField(
+              controller: textEditingController,
+              onChanged: filterCountries,
+              decoration: InputDecoration(
+                hintText: 'Search',
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                  ),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                  borderSide: const BorderSide(
+                    color: AppColors.kGreyScale,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                  borderSide: const BorderSide(
+                    color: AppColors.kGreyScale,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                  borderSide: const BorderSide(
+                    color: AppColors.kGreyScale,
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                  borderSide: const BorderSide(
+                    color: AppColors.kGreyScale,
                   ),
                 ),
               ),
@@ -159,12 +175,12 @@ class _CountryPageState extends State<CountryPage> {
                     title: Text(
                       filteredCountries[index],
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                     ),
                     leading: Image.asset(
                       flags[countries.indexOf(filteredCountries[index])],
-                      width: 50,
-                      height: 50,
+                      width: 32,
+                      height: 32,
                     ),
                   ),
                 );
@@ -175,7 +191,8 @@ class _CountryPageState extends State<CountryPage> {
       ),
       bottomNavigationBar: nextButton(context, () {
         Navigator.pushNamed(context, TopicsPage.routeName);
-      }, 32),
+      },
+          32),
     );
   }
 }
