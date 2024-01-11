@@ -141,14 +141,18 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                Container(
-                  height: 170,
-                  width: 360,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image:  DecorationImage(
-                      image: AssetImage(AppPng.kTrending),
-                      fit: BoxFit.fill,
+                InkWell(onTap: (){
+                  Navigator.pushReplacementNamed(context, '/authorProfilePage');
+                },
+                  child: Container(
+                    height: 170,
+                    width: 360,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image:  DecorationImage(
+                        image: AssetImage(AppPng.kTrending),
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 ),
