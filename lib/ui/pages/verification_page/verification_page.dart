@@ -6,6 +6,9 @@ class VerificationPage extends StatelessWidget {
   VerificationPage({Key? key}) : super(key: key);
   static const routeName = '/verificationPage';
  TextEditingController textEditingController = TextEditingController();
+ TextEditingController textEditingController1 = TextEditingController();
+ TextEditingController textEditingController2 = TextEditingController();
+ TextEditingController textEditingController3 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,26 +21,90 @@ class VerificationPage extends StatelessWidget {
             Text('OTP Verification', textAlign: TextAlign.center, style: TextStyle(color: AppColors.OnText, fontSize: 32, fontWeight: FontWeight.w700,),),
             Text('Enter the OTP sent to +67-1234-5678-9', style: TextStyle(color: AppColors.OnText, fontSize: 16, fontWeight: FontWeight.w400,),),
             SizedBox(height: 27),
-            Container(
-              width: 304,
-              height: 64,
-              child: TextField(
-                keyboardType: TextInputType.number,
-                controller: textEditingController,
-                decoration: InputDecoration(
-                  prefixStyle: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700
+            Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 64,
+                  height: 64,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: textEditingController,
+                    decoration: InputDecoration(
+                      prefixStyle: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700
+                      ),
+                      prefixText: '${textEditingController.text}',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(6))
+                      ),
+                    ),
                   ),
-                  prefixText: '${textEditingController.text}',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(13))
+                ),SizedBox(width: 17,),
+                Container(
+                  width: 64,
+                  height: 64,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: textEditingController1,
+                    decoration: InputDecoration(
+                      prefixStyle: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700
+                      ),
+                      prefixText: '${textEditingController1.text}',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(6))
+                      ),
+                    ),
+                  ),
+                ), SizedBox(width: 17,),
+                Container(
+                  width: 64,
+                  height: 64,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: textEditingController2,
+                    decoration: InputDecoration(
+                      prefixStyle: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700
+                      ),
+                      prefixText: '${textEditingController2.text}',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(6))
+                      ),
+                    ),
+                  ),
+                ),SizedBox(width: 17,),
+                Container(
+                  width: 64,
+                  height: 64,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: textEditingController3,
+                    decoration: InputDecoration(
+                      prefixStyle: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700
+                      ),
+                      prefixText: '${textEditingController3.text}',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(6))
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
             SizedBox(height: 27,),
-            Text('Resend code',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.OnText),),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Resend code in ',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.OnText),),
+                Text('56s',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: Colors.red),),
+              ],
+            ),
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,

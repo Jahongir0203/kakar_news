@@ -14,6 +14,7 @@ PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(),
       body: PageView(
         controller: pageController,

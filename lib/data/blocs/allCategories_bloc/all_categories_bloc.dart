@@ -15,7 +15,7 @@ class AllCategoriesBloc extends Bloc<AllCategoriesEvent, AllCategoriesState> {
       emit(AllCategoriesInitialState());
       try {
         var response = await networKservice.allNews(
-            'wsj.com', 'd4bb802cd5434447a51f0477f58e5e22');
+            'wsj.com', '29397755bab44c4a861e2f85acd9d755');
         emit(AllCategoriesLoadSuccessState(response));
       } catch (e) {
         print(e);

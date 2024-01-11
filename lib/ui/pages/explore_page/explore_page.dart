@@ -210,7 +210,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
-                          height: 500,
+                          height: 900,
                           child: getBody(state)),
                     ])),
               ));
@@ -226,7 +226,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
       return CircularProgressIndicator();
     }
     if (state is AllCategoriesLoadSuccessState) {
-      print('asdfg');
+
       return ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -317,9 +317,6 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                   ),
                 ],
               ),
-
-              // Text(article?.description ?? ''),
-              // Add more details or customize the ListTile as needed
             ],
           );
         },
