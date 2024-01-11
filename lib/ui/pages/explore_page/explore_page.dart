@@ -59,7 +59,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Image.asset(
-                                  AppPng.kBBC,
+                                  AppPng.khealth,
                                   height: 70,
                                   width: 70,
                                 ),
@@ -109,7 +109,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Image.asset(
-                                  AppPng.kBBC,
+                                  AppPng.ktexnolgy,
                                   height: 70,
                                   width: 70,
                                 ),
@@ -156,7 +156,7 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Image.asset(
-                                  AppPng.kBBC,
+                                  AppPng.kart,
                                   height: 70,
                                   width: 70,
                                 ),
