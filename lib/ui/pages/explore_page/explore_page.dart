@@ -64,24 +64,29 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                   width: 70,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Heatlh                        ",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                  Text(
-                                    "Get energizing workout\nmoves,healthlyrecipes...",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Heatlh ",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                    Text(
+                                      "Get energizing workout\nmoves,healthlyrecipes...",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
                               ),
                               SizedBox(
-                                width: 26,
+                                width: 16,
                               ),
                               Container(
                                 height: 34,
@@ -114,21 +119,28 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                   width: 70,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Texnalogy                        ",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                  Text(
-                                    "The application scientific\nknowledeg to the practi...",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Texnalogy",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                    Text(
+                                      "The application scientific\nknowledeg to the practi...",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                              ), SizedBox(
+                                width: 8,
                               ),
                               Container(
                                 height: 34,
@@ -161,24 +173,29 @@ AllCategoriesBloc allCategoriesBloc=AllCategoriesBloc(NetworkService(Dio()));
                                   width: 70,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Art                                    ",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                  Text(
-                                    "Art is a diverse range of\nhuman activity and result...",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Art",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                    Text(
+                                      "Art is a diverse range\nhuman activit and result...",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
                               ),
                               SizedBox(
-                                width: 5,
+                                width: 4,
                               ),
                               Container(
                                 height: 34,
