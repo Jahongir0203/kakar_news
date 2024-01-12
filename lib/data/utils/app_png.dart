@@ -69,5 +69,7 @@ class AppPng {
   static const String khealth ='assets/png/health.png';
   static const String ktexnolgy ='assets/png/texnalogy.png';
   static const String kart ='assets/png/art.png';
+  static const String kcontainer ='assets/png/container.png';
+  static const String kcontainer2='assets/png/container2.png';
 
 }
