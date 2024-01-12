@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:kakar_news/data/blocs/avthor_bloc/authot_bloc.dart';
+
+
 import 'package:dio/dio.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kakar_news/data/blocs/autor_bloc/author_bloc.dart';
 
 import '../../../data/services/network_service.dart';
 
@@ -13,10 +14,10 @@ class Resent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AuthotBloc authotBloc = AuthotBloc(NetworkService(Dio()));
+    AuthorBloc authorBloc = AuthorBloc(NetworkService(Dio()));
     return BlocProvider(
-      create: (context) => authotBloc..add(AuthorLoadedEvent()),
-      child: BlocBuilder<AuthotBloc, AuthotState>(
+      create: (context) => authorBloc..add(AuthorLoadedEvent()),
+      child: BlocBuilder<AuthorBloc, AuthorState>(
         builder: (context, state) {
           return Scaffold(
             body: Column(
@@ -30,21 +31,21 @@ class Resent extends StatelessWidget {
     );
   }
 
-  getBody( state) {
-    if (state is AuthotLoading) {
+  getBody(state) {
+    if (state is AuthorLoading) {
       return CircularProgressIndicator();
     }
-    if (state is AuthotSucsess) {
+    if (state is AuthorSucsess) {
       return ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: state.allCategoriesModel.articles?.length ?? 0,
+        itemCount: state.categoriesModel.articles?.length ?? 0,
         itemBuilder: (context, index) {
-          return Text("${state.allCategoriesModel.articles?[index].title}");
+          return Text("${state.categoriesModel.articles?[index].title}");
         },
       );
     }
-    if (state is AuthotFailur) {
+    if (state is AuthorFalur) {
       return Text("Error");
     }
   }
