@@ -141,18 +141,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                InkWell(onTap: (){
-                  Navigator.pushReplacementNamed(context, '/authorProfilePage');
-                },
-                  child: Container(
-                    height: 170,
-                    width: 360,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image:  DecorationImage(
-                        image: AssetImage(AppPng.kTrending),
-                        fit: BoxFit.fill,
-                      ),
+                Container(
+                  height: 170,
+                  width: 360,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image:  DecorationImage(
+                      image: AssetImage(AppPng.kTrending),
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),

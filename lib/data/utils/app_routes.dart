@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:kakar_news/data/models/detailPage_model.dart';
 import 'package:kakar_news/ui/pages/authorProfile_page/authorProfile_page.dart';
 import 'package:kakar_news/ui/pages/bookmark_page/bookmark_page.dart';
 import 'package:kakar_news/ui/pages/comments_page/comments_page.dart';
@@ -44,10 +45,6 @@ class AppRouteUtils {
       case CountryPage.routeName:
         return CupertinoPageRoute(
           builder: (context) => CountryPage(),
-        );
-      case DetailPage.routeName:
-        return CupertinoPageRoute(
-          builder: (context) => DetailPage(),
         );
       case ExplorePage.routeName:
         return CupertinoPageRoute(
@@ -104,6 +101,10 @@ class AppRouteUtils {
       case VerificationPassword.routeName:
         return CupertinoPageRoute(
           builder: (context) => VerificationPassword(),
+        ); 
+      case DetailPage.routeName:
+        return CupertinoPageRoute(
+          builder: (context) => DetailPage(detailPageModel: settings.arguments as DetailPageModel,),
         );
     }
     return null;

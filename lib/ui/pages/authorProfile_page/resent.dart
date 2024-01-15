@@ -19,11 +19,7 @@ class Resent extends StatelessWidget {
       child: BlocBuilder<AuthotBloc, AuthotState>(
         builder: (context, state) {
           return Scaffold(
-            body: Column(
-              children: [
-                getBody(state),
-              ],
-            ),
+            body: getBody(state),
           );
         },
       ),
@@ -32,16 +28,24 @@ class Resent extends StatelessWidget {
 
   getBody( state) {
     if (state is AuthotLoading) {
-      return CircularProgressIndicator();
+      return Center(child: CircularProgressIndicator());
     }
     if (state is AuthotSucsess) {
-      return ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: state.allCategoriesModel.articles?.length ?? 0,
-        itemBuilder: (context, index) {
-          return Text("${state.allCategoriesModel.articles?[index].title}");
-        },
+      return SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        physics:const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: state.allCategoriesModel.articles?.length ?? 0,
+              itemBuilder: (context, index) {
+                return Text("${state.allCategoriesModel.articles?[index].title}");
+              },
+            ),
+          ],
+        ),
       );
     }
     if (state is AuthotFailur) {

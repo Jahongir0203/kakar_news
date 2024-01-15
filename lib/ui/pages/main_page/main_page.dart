@@ -4,6 +4,7 @@ import 'package:kakar_news/data/blocs/mainPage_bloc/main_page_bloc.dart';
 import 'package:kakar_news/ui/pages/bookmark_page/bookmark_page.dart';
 import 'package:kakar_news/ui/pages/explore_page/explore_page.dart';
 import 'package:kakar_news/ui/pages/home_page/home_page.dart';
+import 'package:kakar_news/ui/pages/profile_page/profile_page.dart';
 
 import '../../../data/utils/app_colors.dart';
 
@@ -12,9 +13,10 @@ class MainPage extends StatelessWidget {
   static const String routeName = '/mainPage';
   MainPageBloc mainPageBloc = MainPageBloc();
   List pages = [
-     HomePage(),
+     const HomePage(),
     ExplorePage(),
      BookMarkPage(),
+    const ProfilePage(),
   ];
 
   @override

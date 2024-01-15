@@ -144,6 +144,8 @@ class NotificationPage extends StatelessWidget {
                                     state.notificationModel.sources![index]
                                             .description ??
                                         'We will win',
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
                                     style: buildTextStyle(
                                       color: AppColors.kBlack,
                                       fontSize: 16,
