@@ -82,7 +82,7 @@ class AuthorProfilePage extends StatelessWidget {
                   "   Broadcasting Corporation \n    for the gathering and "
                   "broadcasting of news\n    and current affairs.",
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
-            ),
+            ),SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

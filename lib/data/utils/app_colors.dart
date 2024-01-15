@@ -14,6 +14,8 @@ class AppColors {
   static const Color kFacebook=Color(0xFF667080);
   static const Color kNewsContainer=Color(0xFFFAFAFA);
   static const Color kSourcesBG=Color(0xFFEEF1F4);
+  static const Color krang=Color(0xEEF1F4);
+
   static const Color white = Colors.white;
  static const Color kRed=Colors.red;
   ///On bu OnBoardingdagi rang

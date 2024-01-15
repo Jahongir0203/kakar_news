@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:kakar_news/data/blocs/avthor_bloc/authot_bloc.dart';
+
+
 import 'package:dio/dio.dart';
 
 import '../../../data/services/network_service.dart';

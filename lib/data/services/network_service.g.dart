@@ -21,39 +21,6 @@ class _NetworkService implements NetworkService {
   String? baseUrl;
 
   @override
-  Future<AllCategoriesModel> getAuthor(
-    String domains,
-    String apiKey,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'domains': domains,
-      r'apiKey': apiKey,
-    };
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<AllCategoriesModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/everything',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = AllCategoriesModel.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
   Future<CategoriesModel> getCategoriesNews(
     String category,
     String apiKey,
@@ -176,6 +143,33 @@ class _NetworkService implements NetworkService {
               baseUrl,
             ))));
     final value = NotificationModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CategoriesModel> getAuthor(String apiKey) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'apiKey': apiKey};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<CategoriesModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'top-headlines/sources',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = CategoriesModel.fromJson(_result.data!);
     return value;
   }
 
