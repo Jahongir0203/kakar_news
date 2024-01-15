@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:kakar_news/data/blocs/trendingNews_bloc/trending_news_bloc.dart';
+import 'package:kakar_news/data/models/detailPage_model.dart';
 import 'package:kakar_news/data/services/network_service.dart';
-import 'package:kakar_news/ui/pages/notification_page/notification_page.dart';
+import 'package:kakar_news/ui/pages/detail_page/detail_page.dart';
 import 'package:kakar_news/ui/widgets/app_textStyle.dart';
 
 import '../../../data/utils/app_colors.dart';
@@ -37,10 +38,7 @@ class TrendingPage extends StatelessWidget {
                 ),
               ),
               actions: [
-                IconButton(
-                    onPressed: () {
-                    },
-                    icon: const Icon(Icons.more_vert)),
+                IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
               ],
             ),
             body: buildBody(context, state),
@@ -82,12 +80,25 @@ class TrendingPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            DetailPage.routeName,
+                            arguments: DetailPageModel(
+                              state.trendingNewsModel.articles![index].author,
+                              state.trendingNewsModel.articles![index]
+                                  .urlToImage,
+                              'Trending',
+                              state.trendingNewsModel.articles![index].title,
+                              state.trendingNewsModel.articles![index].content,
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 183,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                             borderRadius: BorderRadius.circular(6),
+                            borderRadius: BorderRadius.circular(6),
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(6),

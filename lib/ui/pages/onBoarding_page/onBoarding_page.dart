@@ -117,7 +117,7 @@ class OnBoardingPage extends StatelessWidget {
                                   },
                                   child: const Center(
                                       child: Text(
-                                    'Black',
+                                    'Back',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
@@ -198,7 +198,7 @@ class OnBoardingPage extends StatelessWidget {
                                   },
                                   child: const Center(
                                       child: Text(
-                                    'Black',
+                                    'Back',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
